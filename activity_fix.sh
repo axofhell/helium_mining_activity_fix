@@ -6,7 +6,7 @@ height=$(curl -s https://api.helium.io/v1/blocks/height | grep -Po '"height":[^}
 last_poc_challenge=$(curl -s https://api.helium.io/v1/hotspots/$miner_name |grep -Po '"last_poc_challenge":[^\,]+' | sed -e 's/^"last_poc_challenge"://')
 gap=$(($height - $last_poc_challenge))
 echo
-if [ "$gap" -gt 200 ];
+if [ "$gap" -gt 100 ];
 then
     echo "No activity for at least 200 blocks\nRestarting miner service...";
     docker restart $docker_name
