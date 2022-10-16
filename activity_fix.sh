@@ -8,7 +8,7 @@ gap=$(($height - $last_poc_challenge))
 echo
 if [ "$gap" -gt 100 ];
 then
-    echo "No activity for at least 200 blocks\nRestarting miner service...";
+    echo "No activity for at least 100 blocks\nRestarting miner service...";
     docker restart $docker_name
 else
     echo "Miner activity: Normal";
