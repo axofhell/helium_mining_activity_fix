@@ -6,9 +6,9 @@ height=$(curl -s https://api.helium.io/v1/blocks/height | grep -Po '"height":[^}
 last_poc_challenge=$(curl -s https://api.helium.io/v1/hotspots/$miner_name |grep -Po '"last_poc_challenge":[^\,]+' | sed -e 's/^"last_poc_challenge"://')
 gap=$(($height - $last_poc_challenge))
 echo
-if [ "$gap" -gt 60 ];
+if [ "$gap" -gt 50 ];
 then
-    echo "No activity for at least 60 blocks\nRestarting miner service...";
+    echo "No activity for at least 50 blocks\nRestarting miner service...";
     docker restart $docker_name
 else
     echo "Miner activity: Normal";
