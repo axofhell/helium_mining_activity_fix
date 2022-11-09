@@ -1,5 +1,5 @@
 # helium_mining_activity_fix
-This script watch and fix helium miners every 30 minutes if there is no poc activity in 50 blocks.
+This script watch and fix helium miners every 15 minutes if there is no poc activity in 30 blocks.
 
 
 
